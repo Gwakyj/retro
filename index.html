@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>추억의 레트로</title>
+</head>
+
+<style type="text/css">
+	.contain{position: relative;}
+	
+	#gabox{margin: auto; position: absolute; top: 30px; left: 650px; transform: translate(-50%);}
+
+	#cha1{margin: auto; position: absolute; top: 190px; left: 950px; transform: translate(-50%);}
+
+	#cha2{margin: auto; position: absolute; top: 330px; left: 950px; transform: translate(-50%);}
+
+	#cha3{margin: auto; position: absolute; top: 450px; left: 950px; transform: translate(-50%);}
+
+
+/*gif*/
+	#north{margin: auto; position: absolute; top: 274px; left: 653px; transform: translate(-50%);}
+	#mario{margin: auto; position: absolute; top: 264px; left: 653px; transform: translate(-50%);}
+	#circus{margin: auto; position: absolute; top: 268px; left: 653px; transform: translate(-50%);}
+
+</style>
+
+<body class="contain" style="background:#874aa6;">
+
+
+	<div id="gabox" style="width: 600px; /*background-color: green;*/">
+		<img src="./img/game.png" style="width: 600px; height: auto;">
+	</div><!--게임기-->
+
+	<div id="cha1" style="width: 130px; /*background-color: red;*/">
+		<img id="peng" src="./img/pe.png" style="width: 130px; height: auto; cursor:pointer;" >
+	</div><!--펭귄-->
+
+	<div id="cha2" style="width: 80px; /*background-color: red;*/">
+		<img id="rio" src="./img/ma.png" style="width: 80px; height: auto; cursor:pointer;" >
+	</div><!--마리오-->
+
+	<div id="cha3" style="width: 80px; /*background-color: red;*/">
+			<img id="cus" src="./img/cus.png" style="width: 80px; height: auto; cursor:pointer;" >
+	</div><!--서커스-->
+
+
+
+	<!-- gif-->
+
+	<div id="north" style="width: 200px; /*background-color: red;">
+		<img src="./img/north.gif" id="game1" style="width: 200px; height: auto; opacity: 0;">
+	</div><!--남극게임-->
+
+	<div id="mario" style="width: 160px; /*background-color: red;">
+		<img src="./img/rio.gif" id="game2" style="width: 160px; height: auto; opacity: 0;">
+	</div><!--마리오-->
+
+	<div id="circus" style="width: 170px; /*background-color: red;">
+		<img src="./img/su.gif" id="game3" style="width: 170px; height: auto; opacity: 0;">
+	</div><!--서커스-->
+
+	<!--오에스티-->
+	<audio src="./mp/north.mp3" id="back1"></audio>
+	<audio src="./mp/super.mp3" id="back2"></audio>
+	<audio src="./mp/rion.mp3" id="back3"></audio>
+
+	<script type="text/javascript">
+		var toggle = "off";
+		peng.onclick = function () {
+			if (toggle == "off"){
+				game1.style.opacity = "1";
+				game2.style.opacity = "0";
+				game3.style.opacity = "0";
+
+				back1.play();
+				back2.pause();
+				back3.pause();
+
+				toggle = "on";
+			
+			}else if (toggle == "on") {
+				game1.style.opacity = "0";
+
+				back1.pause();
+
+				toggle = "off";
+			}
+		}
+
+		var toggle = "off";
+		rio.onclick = function () {
+			if (toggle == "off"){
+				game1.style.opacity = "0";
+				game2.style.opacity = "1";
+				game3.style.opacity = "0";
+
+				back1.pause();
+				back2.play();
+				back3.pause();
+
+				toggle = "on";
+			
+			}else if (toggle == "on") {
+				game2.style.opacity = "0";
+
+				back2.pause();
+
+				toggle = "off";
+			}
+		}
+
+		var toggle = "off";
+		cus.onclick = function () {
+			if (toggle == "off"){
+				game1.style.opacity = "0";
+				game2.style.opacity = "0";
+				game3.style.opacity = "1";
+
+				back1.pause();
+				back2.pause();
+				back3.play();
+
+				toggle = "on";
+			
+			}else if (toggle == "on") {
+				game3.style.opacity = "0";
+
+				back3.pause();
+
+				toggle = "off";
+			}
+		}	
+
+	</script>
+
+</body>
+</html>
